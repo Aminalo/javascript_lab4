@@ -78,3 +78,17 @@ In this section, I worked with the array of objects produced in Part 3 to demons
 - Finally, I used a loop to calculate the average age of all the people in the updated array, converting each age string into a number for correct calculation.
 
 This part helped me practice how to read and update structured data, which is essential when working with databases or JSON in real-world applications.
+
+
+### 🔁 Part 5: Full Circle — Converting Data Back to CSV
+
+To complete the full data lifecycle, I converted the final array of objects (from Part 4) back into a **CSV format** string.
+
+Here's how I approached it:
+
+- Extracted the headers dynamically from the object keys.
+- Created a new array to hold each row of data, starting with the headers.
+- Used a loop to format each object as a CSV row by joining its values with commas.
+- Joined all rows together using `\n` to form a proper multi-line CSV string.
+
+This task helped me understand how to **reverse structured data back into a flat file format**, which is a valuable skill when exporting or saving data to files or APIs.
