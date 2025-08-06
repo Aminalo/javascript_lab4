@@ -1,53 +1,58 @@
-// CSV string input
-let csv = "ID, Name, Occupation, Age\n42, Bruce, Knight, 41\n57, Bob, Fry Cook, 19\n63, Blaine, Quiz Master, 58\n98, Bill, Doctor's Assistant, 26";
+// PART 1: Refactoring Old Code into Objects
 
-//Part 1: Refactoring Old Code
+let csv1 = "ID, Name, Occupation, Age\n42, Bruce, Knight, 41\n57, Bob, Fry Cook, 19\n63, Blaine, Quiz Master, 58\n98, Bill, Doctor's Assistant, 26";
 
 // Step 1: Split CSV string into rows
-let rows = csv.split("\n");
+let rows1 = csv1.split("\n");
 
-// Step 2: Get headers from the first row (columns names)
-let headers = rows[0].split(",").map(header => header.trim());
+// Step 2: Get headers from the first row
+let headers1 = rows1[0].split(",").map(header => header.trim());
 
-// Step 3: Create an array to hold all data objects
-let data = [];
+// Step 3: Create an array to hold data objects
+let dataObjects1 = [];
 
-// Step 4: Loop through the remaining rows and build objects
-for (let i = 1; i < rows.length; i++) {
-  let values = rows[i].split(",").map(value => value.trim());
+// Step 4: Loop through remaining rows and build objects
+for (let i = 1; i < rows1.length; i++) {
+  let values = rows1[i].split(",").map(value => value.trim());
 
-  // Create an object for this row
   let rowObject = {
-    [headers[0]]: values[0],
-    [headers[1]]: values[1],
-    [headers[2]]: values[2],
-    [headers[3]]: values[3]
+    [headers1[0]]: values[0],
+    [headers1[1]]: values[1],
+    [headers1[2]]: values[2],
+    [headers1[3]]: values[3],
   };
 
-  // Add the object to the array
-  data.push(rowObject);
+  dataObjects1.push(rowObject);
 }
 
-// Final output - loop and log each row
-for (let i = 0; i < data.length; i++) {
-  console.log(data[i]);
+// Output Part 1 result
+console.log("Part 1: Array of objects");
+console.log(dataObjects1);
+
+
+
+// PART 2: Expanding Functionality - Dynamic columns and 2D array
+
+let csv2 = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+
+// Step 1: Split CSV into rows
+let rows2 = csv2.split("\n");
+
+// Step 2: Create 2D array table dynamically
+let table2 = [];
+
+for (let i = 0; i < rows2.length; i++) {
+  let row = rows2[i].split(",").map(cell => cell.trim());
+  table2.push(row);
 }
 
+// Step 3: Calculate number of columns dynamically
+let columnCount2 = table2[0].length;
 
-//Part2: Expanding Functionality
+// Output Part 2 result
+console.log("\nPart 2: 2D Array Table");
+console.log(table2);
+console.log("Number of columns:", columnCount2);
 
-// STEP 1: Loop through all rows and split each one by ","
-// We'll also trim the values to clean up any extra space
-let table = [];  // this will become our 2D array
 
-for (let i = 0; i < rows.length; i++) {
-  let row = rows[i].split(",").map(cell => cell.trim());
-  table.push(row); // Add the row array into the parent array
-}
 
-// STEP 2: Determine number of columns based on header row (index 0)
-let columnCount = table[0].length;
-
-// STEP 3: Log the 2D array and number of columns
-console.log("📊 Full 2D Table:", table);
-console.log("🔢 Number of columns:", columnCount);
