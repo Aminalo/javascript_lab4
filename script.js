@@ -55,4 +55,31 @@ console.log(table2);
 console.log("Number of columns:", columnCount2);
 
 
+// PART 3: Transforming Data - Array of objects with lowercase keys
+
+// Using table2 from Part 2 as input
+
+// Step 1: Extract headers and convert to lowercase
+let headers3 = table2[0].map(header => header.toLowerCase().trim());
+
+// Step 2: Create new array for transformed objects
+let transformedData3 = [];
+
+// Step 3: Loop through data rows (skip headers)
+for (let i = 1; i < table2.length; i++) {
+  let row = table2[i];
+  let rowObject = {};
+
+  for (let j = 0; j < headers3.length; j++) {
+    rowObject[headers3[j]] = row[j].trim();
+  }
+
+  transformedData3.push(rowObject);
+}
+
+// Output Part 3 result
+console.log("\nPart 3: Transformed Array of Objects");
+console.log(transformedData3);
+
+
 

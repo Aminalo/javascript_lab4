@@ -46,3 +46,16 @@ I also saved the column count in a variable so that the program can work with an
 
 # Why this is useful:
 This approach makes my code more flexible. Now I can reuse this script with different CSV files without having to change anything in the logic.
+
+
+###  Part 3: Transforming Data
+
+In this step, I took the 2D array from Part 2 and made the data more usable by converting each row into an object.
+
+# What I changed:
+- I extracted the headers from the first row and converted them to lowercase using `.toLowerCase()` for consistency.
+- Then I looped over each data row and matched each value to the correct header key to form a JavaScript object.
+- These objects were stored in a new array called `transformedData`.
+
+# Why this helps:
+By converting the data to objects, it's easier to work with. I can now access a value like `data[1].occupation` instead of needing to know it's at index 2. This makes the code cleaner, easier to read, and easier to use in future steps or projects.
