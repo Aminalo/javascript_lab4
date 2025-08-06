@@ -23,6 +23,7 @@ The full set of data is stored in one array.
 # Why this is useful:
 This makes the CSV data easier to manage, search, and display. It’s also closer to how data is structured in real-world applications like APIs or database queries.
 
+
 ## Part2
 In this part of the project, I refactored my original CSV parser from ALAB 308.3.1 to make it more dynamic and scalable.
 
