@@ -108,3 +108,25 @@ let averageAge = totalAge / transformedData3.length;
 console.log("\nPart 4: Updated Array After Manipulations");
 console.log(transformedData3);
 console.log(`Average Age: ${averageAge.toFixed(2)}`);
+
+
+// Part 5: Convert final data back to CSV format
+
+// Step 1: Get headers from the keys of the first object
+let csvHeaders5 = Object.keys(transformedData3[0]);
+
+// Step 2: Create an array to store all CSV rows (start with header row)
+let csvRows5 = [csvHeaders5.join(",")];
+
+// Step 3: Loop through objects and turn each into a CSV row
+for (let i = 0; i < transformedData3.length; i++) {
+  let row = csvHeaders5.map(header => transformedData3[i][header]);
+  csvRows5.push(row.join(","));
+}
+
+// Step 4: Join all rows with newline characters to get the final CSV string
+let finalCSV5 = csvRows5.join("\n");
+
+// Output
+console.log("\nPart 5: Final CSV Format");
+console.log(finalCSV5);
