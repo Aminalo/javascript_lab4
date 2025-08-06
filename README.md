@@ -60,3 +60,21 @@ In this step, I took the 2D array from Part 2 and made the data more usable by c
 
 # Why this helps:
 By converting the data to objects, it's easier to work with. I can now access a value like `data[1].occupation` instead of needing to know it's at index 2. This makes the code cleaner, easier to read, and easier to use in future steps or projects.
+
+
+## Part 4: Sorting and Manipulating Data
+In this section, I worked with the array of objects produced in Part 3 to demonstrate how to manipulate data using common array methods in JavaScript.
+
+# Here’s what I did step-by-step:
+
+- Sorted the data by the id property in ascending order to organize the list logically.
+
+- Removed the last object from the array using .pop() — this simulates deleting the most recent entry.
+
+- Inserted a new object at index 1 using .splice(). This shows how we can add new data at a specific position.
+
+- Appended another object to the end of the array using .push().
+
+- Finally, I used a loop to calculate the average age of all the people in the updated array, converting each age string into a number for correct calculation.
+
+This part helped me practice how to read and update structured data, which is essential when working with databases or JSON in real-world applications.

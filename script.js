@@ -82,4 +82,29 @@ console.log("\nPart 3: Transformed Array of Objects");
 console.log(transformedData3);
 
 
+//Part 4: Sorting and Manipulating Data
+// Assuming transformedData3 from Part 3 is available
 
+// Step 1: Sort the array by 'id' (numerically)
+transformedData3.sort((a, b) => Number(a.id) - Number(b.id));
+
+// Step 2: Remove the last element
+transformedData3.pop();
+
+// Step 3: Insert new object at index 1
+transformedData3.splice(1, 0, { id: "48", name: "Barry", occupation: "Runner", age: "25" });
+
+// Step 4: Add new object at the end
+transformedData3.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+
+// Step 5: Calculate average age using a loop
+let totalAge = 0;
+for (let i = 0; i < transformedData3.length; i++) {
+  totalAge += Number(transformedData3[i].age);
+}
+let averageAge = totalAge / transformedData3.length;
+
+// Output results
+console.log("\nPart 4: Updated Array After Manipulations");
+console.log(transformedData3);
+console.log(`Average Age: ${averageAge.toFixed(2)}`);
